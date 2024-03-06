@@ -51,7 +51,7 @@ let generateCard = (data) => {
     console.log(themeColor);
     card.innerHTML = `
         <p class="hp">
-            <spawn>HP</span>
+            <span>HP</span>
             ${hp}
         </p>
         <img src=${imgSrc} />
@@ -70,11 +70,12 @@ let generateCard = (data) => {
             </div>
             <div>
                 <h3>${statSpeed}</h3>
+                <p>Speed</p>
             </div>
         </div>
     `;
     appendTypes(data.types);
-    sytleCard(themeColor);
+    styleCard(themeColor);
 };
 
 let appendTypes = (types) =>  {
@@ -88,9 +89,9 @@ let appendTypes = (types) =>  {
 let styleCard = (color) => {
     card.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
     card.querySelectorAll(".types span").forEach((typeColor) => {
-        typeColor.style.backgroundColor = color;
+      typeColor.style.backgroundColor = color;
     });
-}
+};
 
 //button event listener
 btn.addEventListener("click", getPokeData);
